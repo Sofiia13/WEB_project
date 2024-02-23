@@ -24,7 +24,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 40px;
   justify-content: space-between;
   z-index: 1;
   /* top: 0;
@@ -108,5 +108,4 @@ a:hover {
   justify-content: center;
   padding-bottom: 70px;
   text-align: center;
-  text
 }
