@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.first-page {
+.poster {
   position: relative;
 }
 
@@ -19,7 +19,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  padding: 20px;
+  background-color: aqua;
 }
 
 nav {
@@ -34,6 +35,10 @@ nav {
   color: #d62222;
   margin-right: 20px;
   font-size: 20px;
+}
+
+h1 {
+  color: #d62222;
 }
 
 a:link {

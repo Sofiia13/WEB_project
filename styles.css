@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #353535;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.first-page {
+  position: relative;
+}
+
+.main-header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  justify-content: space-between;
+  z-index: 1;
+  /* top: 0;
+  right: 0; */
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+.logo {
+  color: #fff;
+}
+
+.poster {
+  position: relative;
+}
+
+.poster-text {
+  position: absolute;
+  top: 50%; /* Move 50% down from the top */
+  left: 50%; /* Move 50% from the left */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Move back by half of its own width and height */
+  text-align: center; /* Align text in the center */
+  color: #fff;
+  /* line-height: 1.5; */
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.shop-now {
+  margin-top: 30px;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: #fff;
+  color: #fff;
+  font-size: 25px;
+}
+
+.shop-now:hover {
+  color: #fff;
+  background-color: #c9c9c9;
+  border: none;
+}
+
+.icons {
+  display: flex;
+  gap: 30px;
+  color: #fff;
+  /* margin-right: 20px; */
+  font-size: 20px;
+  justify-content: right;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.fan {
+  padding-top: 70px;
+  padding-bottom: 55px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.plants-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 70px;
+  text-align: center;
+  text
+}
