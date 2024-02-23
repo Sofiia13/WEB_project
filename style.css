@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.first-page {
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  /* background-image: url(img/poster2.png); */
+}
+
+.main-header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 30px;
+  color: #d62222;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+a:link {
+  text-decoration: none;
+  color: #d62222;
+}
