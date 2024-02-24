@@ -6,8 +6,12 @@
   font-family: sans-serif;
 }
 
-body {
+.part--1 {
   background-color: #353535;
+}
+
+.part--2 {
+  background-color: #afafaf;
 }
 
 .banner {
@@ -68,10 +72,12 @@ nav {
   font-size: 25px;
 }
 
-.shop-now:hover {
+.shop-now:hover,
+.shop-now:active {
   color: #fff;
   background-color: #c9c9c9;
   border: none;
+  cursor: pointer;
 }
 
 .icons {
@@ -93,7 +99,7 @@ a:hover {
   cursor: pointer;
 }
 
-.fan {
+h2 {
   padding-top: 70px;
   padding-bottom: 55px;
   text-align: center;
@@ -108,4 +114,213 @@ a:hover {
   justify-content: center;
   padding-bottom: 70px;
   text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+.plants-list img {
+  width: 323px;
+  height: auto;
+}
+
+.buy-now {
+  margin-top: 20px;
+  padding: 15px 20px;
+  color: #fff;
+  background-color: #a9a9a9;
+  border: none;
+}
+
+.buy-now:hover,
+.buy-now:active {
+  color: #d6d6d6;
+  background-color: #949494;
+  cursor: pointer;
+}
+
+.wide-img img {
+  width: 500px;
+  height: auto;
+}
+
+.wide-img {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.wide-img p {
+  word-wrap: break-word;
+  width: 500px;
+  font-size: 16px;
+}
+
+.main-p {
+  font-size: 25px;
+  margin: 30px 0;
+}
+
+.read-more {
+  padding: 15px 35px;
+  margin: 30px 0;
+  margin-bottom: 80px;
+  border: none;
+  background-color: #fff;
+  color: #9c9c9c;
+}
+
+.read-more:hover,
+.read-more:active {
+  background-color: #d8d7d7;
+  color: #919191;
+  cursor: pointer;
+}
+
+.monstera-img {
+  position: relative;
+}
+
+.form {
+  z-index: 1;
+  position: absolute;
+  top: 50%; /* Move 50% down from the top */
+  left: 50%; /* Move 50% from the left */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Move back by half of its own width and height */
+  text-align: center; /* Align text in the center */
+  color: #fff;
+  padding: 20px 100px;
+  border: 2px solid #fff;
+}
+
+.registration-header {
+  padding-bottom: 25px;
+
+  font-size: 43px;
+}
+
+.form p {
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
+#mail {
+  padding: 23px 32px;
+  font-size: 15px;
+}
+
+.sign-up {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 16px;
+  background-color: #a1a1a1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.sign-up:hover,
+.sign-up:active {
+  background-color: #8d8d8d;
+  color: #e5e5e5;
+}
+
+.gift-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 100px 150px;
+  gap: 100px;
+  text-align: left;
+  align-items: center;
+}
+
+.gift-card-img {
+  width: 460px;
+  height: auto;
+  position: relative;
+}
+
+.gift-content {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  left: 30%;
+  bottom: 53%;
+  transform: translate(-50%, 50%);
+  font-size: 40px;
+}
+
+.gift-paragraph h3 {
+  font-size: 40px;
+  padding-bottom: 25px;
+}
+
+.gift-paragraph {
+  width: 500px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.purchase {
+  margin-top: 25px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0);
+  color: #fff;
+  font-size: 15px;
+  padding: 20px 40px;
+  line-height: 1;
+}
+
+.purchase:hover,
+.purchase:active {
+  cursor: pointer;
+  background-color: #fff;
+  color: #afafaf;
+  border: none;
+}
+
+.footer {
+  display: flex;
+  background-color: #353535;
+  justify-content: space-between;
+  padding: 40px 200px;
+  color: #fff;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25px;
+  column-gap: 100px;
+  padding-right: 70px;
+  font-size: 15px;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  color: #a1a1a1;
+  text-decoration: underline;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.left-side h3 {
+  font-size: 30px;
+}
+
+.left-side p {
+  padding: 40px 0;
+}
+
+.social-links {
+  padding-right: 15px;
+  font-size: 20px;
 }
