@@ -17,31 +17,61 @@
     <div class="part--1">
       <div class="first-page">
         <div class="main-header">
-          <h1 class="logo">Plants</h1>
+          <input type="checkbox" id="click" />
+
+          <div class="bar-logo">
+            <h1 class="logo">Plants</h1>
+            <label for="click" class="checkbox">
+              <i class="fa-solid fa-bars" id="bar"></i>
+              <i class="fa-solid fa-xmark" id="cancel"></i>
+            </label>
+          </div>
+
           <nav class="main-nav">
-            <a href="#">Shop</a>
-            <a href="#">Our Story</a>
-            <a href="#">Journal</a>
-            <a href="#">Contact</a>
+            <ul>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Journal</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
           </nav>
 
           <div class="icons">
-            <a href="https://www.instagram.com/squarespace" class="social-links"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-
-            <a href="https://www.facebook.com/squarespace" class="social-links"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="https://twitter.com/squarespace" class="social-links"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
-            <i class="fa-solid fa-basket-shopping"></i>
+            <ul>
+              <li>
+                <a
+                  href="https://www.instagram.com/squarespace"
+                  class="social-links"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/squarespace"
+                  class="social-links"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/squarespace" class="social-links"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="social-links"
+                  ><i class="fa-solid fa-basket-shopping"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div class="poster">
-          <img src="img/poster2.png" alt="image with plants" class="banner" />
+          <img
+            src="img/poster2.png"
+            alt="image with plants"
+            class="banner image-fit"
+          />
         </div>
 
         <div class="poster-text">
@@ -52,17 +82,17 @@
 
       <h2 class="fan">Fan Favourites</h2>
       <div class="plants-list">
-        <div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
           <img src="img/plant1.png" />
           <p>Lil' Guys</p>
           <button class="buy-now">Buy Now</button>
         </div>
-        <div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
           <img src="img/plant2.png" />
           <p>Bigger Statements</p>
           <button class="buy-now">Buy Now</button>
         </div>
-        <div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
           <img src="img/plant3.png" />
           <p>Low Maintenance</p>
           <button class="buy-now">Buy Now</button>
@@ -75,7 +105,7 @@
       <h2>The Journal</h2>
 
       <div class="wide-img">
-        <div>
+        <div class="col-lg-4 col-md-4">
           <img src="img/wider_img1.png" />
           <h3 class="main-p">Is It Flowers You’re After?</h3>
           <p>
@@ -85,7 +115,7 @@
           <button class="read-more">Read More</button>
         </div>
 
-        <div>
+        <div class="col-lg-4 col-md-4">
           <img src="img/wider_img2.png" />
           <h3 class="main-p">Searching for Succulents?</h3>
           <p>
@@ -114,14 +144,14 @@
           <button class="sign-up">Sign Up</button>
         </div>
 
-        <img src="img/monstera_wide.png" class="banner" />
+        <img
+          src="img/monstera_wide.png"
+          class="banner monstera-poster image-fit"
+        />
       </div>
 
       <div class="gift-card">
-        <img src="img/gift-card2_new.jpg" class="gift-card-img" />
-        <div class="gift-content">
-          <p>GIFT CARD</p>
-        </div>
+        <img src="img/gift.png" class="gift-card-img" />
         <div class="gift-paragraph">
           <h3>Give the Gift of Greenery</h3>
           <p>

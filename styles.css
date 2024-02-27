@@ -14,9 +14,17 @@
   background-color: #afafaf;
 }
 
+/* IMAGE AND NAVIGATION */
+
 .banner {
   width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.image-fit {
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
 }
 
 .first-page {
@@ -29,19 +37,26 @@
   display: flex;
   align-items: center;
   padding: 20px 40px;
-  justify-content: space-between;
   z-index: 1;
-  /* top: 0;
-  right: 0; */
 }
 
-nav {
+.main-nav {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
   gap: 30px;
 }
 
 .logo {
   color: #fff;
+  display: flex;
+  justify-content: left;
 }
 
 .poster {
@@ -50,15 +65,11 @@ nav {
 
 .poster-text {
   position: absolute;
-  top: 50%; /* Move 50% down from the top */
-  left: 50%; /* Move 50% from the left */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Move back by half of its own width and height */
-  text-align: center; /* Align text in the center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: #fff;
-  /* line-height: 1.5; */
   font-size: 50px;
   font-weight: normal;
 }
@@ -89,6 +100,12 @@ nav {
   justify-content: right;
 }
 
+.icons ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
 a:link,
 a:visited {
   text-decoration: none;
@@ -97,7 +114,10 @@ a:visited {
 
 a:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
+
+/* FAN FAVOURITES */
 
 h2 {
   padding-top: 70px;
@@ -109,13 +129,17 @@ h2 {
 
 .plants-list {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
   padding-bottom: 70px;
   text-align: center;
   font-size: 30px;
   color: #fff;
+}
+
+.plants-list > div {
+  flex: 0 0 calc(323px - 30px);
 }
 
 .plants-list img {
@@ -138,23 +162,33 @@ h2 {
   cursor: pointer;
 }
 
-.wide-img img {
-  width: 500px;
-  height: auto;
-}
+/* WIDE IMAGES */
 
 .wide-img {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
+  padding: 0 10px;
+}
+
+.wide-img img {
+  max-width: 100%;
+  height: auto;
+  width: 490px;
+}
+
+.wide-img > div {
+  /* flex: 0 0 calc(323px - 30px); */
+  /* flex: 1;  */
+  max-width: 500px;
 }
 
 .wide-img p {
   word-wrap: break-word;
-  width: 500px;
   font-size: 16px;
 }
 
@@ -179,6 +213,8 @@ h2 {
   cursor: pointer;
 }
 
+/* REGISTRATION FORM */
+
 .monstera-img {
   position: relative;
 }
@@ -186,13 +222,10 @@ h2 {
 .form {
   z-index: 1;
   position: absolute;
-  top: 50%; /* Move 50% down from the top */
-  left: 50%; /* Move 50% from the left */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Move back by half of its own width and height */
-  text-align: center; /* Align text in the center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: #fff;
   padding: 20px 100px;
   border: 2px solid #fff;
@@ -230,8 +263,9 @@ h2 {
   color: #e5e5e5;
 }
 
+/* GIFT-CARD */
+
 .gift-card {
-  position: relative;
   display: flex;
   justify-content: center;
   padding: 100px 150px;
@@ -242,18 +276,8 @@ h2 {
 
 .gift-card-img {
   width: 460px;
+  max-width: 100%;
   height: auto;
-  position: relative;
-}
-
-.gift-content {
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  left: 30%;
-  bottom: 53%;
-  transform: translate(-50%, 50%);
-  font-size: 40px;
 }
 
 .gift-paragraph h3 {
@@ -285,8 +309,11 @@ h2 {
   border: none;
 }
 
+/* FOOTER */
+
 .footer {
   display: flex;
+  width: 100%;
   background-color: #353535;
   justify-content: space-between;
   padding: 40px 200px;
@@ -323,4 +350,654 @@ h2 {
 .social-links {
   padding-right: 15px;
   font-size: 20px;
+}
+
+label #bar {
+  z-index: 1;
+  color: #8d8d8d;
+  font-size: 30px;
+  float: left;
+  line-height: 80px;
+  /* margin-left: 40px; */
+  cursor: pointer;
+  display: none;
+}
+
+#click {
+  display: none;
+}
+label #cancel {
+  display: none;
+  color: #8d8d8d;
+  font-size: 30px;
+  float: left;
+  line-height: 80px;
+  /* margin-left: 40px; */
+  cursor: pointer;
+  z-index: 3;
+}
+
+@media (min-width: 800px) and (max-width: 1150px) {
+  .image-fit {
+    aspect-ratio: 14 / 10;
+    object-fit: cover;
+  }
+
+  .gift-card {
+    padding: 100px 100px;
+    gap: 50px;
+    text-align: left;
+    align-items: center;
+  }
+
+  .gift-card-img {
+    width: 460px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gift-paragraph h3 {
+    font-size: 30px;
+    padding-bottom: 25px;
+  }
+
+  .gift-paragraph {
+    width: 500px;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .purchase {
+    margin-top: 25px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-size: 15px;
+    padding: 20px 40px;
+    line-height: 1;
+  }
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    float: left;
+  }
+
+  .col-lg-1 {
+    width: 8.33%;
+  }
+
+  .col-lg-2 {
+    width: 16.66%;
+  }
+
+  .col-lg-3 {
+    width: 25%;
+  }
+
+  .col-lg-4 {
+    width: 33%;
+  }
+
+  .col-lg-5 {
+    width: 41.66%;
+  }
+
+  .col-lg-6 {
+    width: 50%;
+  }
+
+  .col-lg-7 {
+    width: 58.33%;
+  }
+
+  .col-lg-8 {
+    width: 66.66%;
+  }
+
+  .col-lg-9 {
+    width: 75%;
+  }
+
+  .col-lg-10 {
+    width: 86.33%;
+  }
+
+  .col-lg-11 {
+    width: 91.66%;
+  }
+
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .image-fit {
+    aspect-ratio: 14 / 12;
+    object-fit: cover;
+  }
+
+  .main-header {
+    display: inline;
+  }
+
+  .bar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .bar-logo label #bar {
+    padding-right: 30px;
+  }
+
+  label #bar {
+    display: flex;
+  }
+
+  #click:checked ~ .bar-logo #bar {
+    display: none;
+  }
+
+  #click:checked ~ .bar-logo #cancel {
+    display: inline;
+  }
+
+  #click:checked ~ .main-nav ul {
+    left: 0%;
+  }
+
+  .main-nav ul {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: #353535;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .main-nav ul li {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    font-size: 20px;
+  }
+
+  .icons ul {
+    position: fixed;
+    bottom: 80px;
+    left: -100%;
+  }
+
+  #click:checked ~ .icons ul {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 80px;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 3;
+    transition: all 0.3s ease;
+  }
+
+  .gift-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    gap: 30px;
+  }
+
+  .gift-card-img {
+    margin-bottom: 15px;
+  }
+
+  .gift-paragraph {
+    width: 100%;
+  }
+
+  .monstera-poster {
+    aspect-ratio: 12 / 7;
+    object-fit: cover;
+  }
+
+  .registration-header {
+    padding-bottom: 20px;
+
+    font-size: 35px;
+  }
+
+  .form p {
+    padding-bottom: 25px;
+    font-size: 16px;
+  }
+
+  #mail {
+    padding: 20px 27px;
+    font-size: 15px;
+  }
+
+  .sign-up {
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 13px;
+    background-color: #a1a1a1;
+    color: #fff;
+  }
+
+  .plants-list > div {
+    flex-basis: calc(45% - 15px);
+  }
+
+  .footer-nav {
+    margin-top: 20px;
+  }
+
+  .footer {
+    display: flex;
+    padding: 40px 40px;
+  }
+
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    float: left;
+  }
+
+  .col-md-1 {
+    width: 8.33%;
+  }
+
+  .col-md-2 {
+    width: 16.66%;
+  }
+
+  .col-md-3 {
+    width: 25%;
+  }
+
+  .col-md-4 {
+    width: 33.33%;
+  }
+
+  .col-md-5 {
+    width: 41.66%;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+
+  .col-md-7 {
+    width: 58.33%;
+  }
+
+  .col-md-8 {
+    width: 66.66%;
+  }
+
+  .col-md-9 {
+    width: 75%;
+  }
+
+  .col-md-10 {
+    width: 83.33%;
+  }
+
+  .col-md-11 {
+    width: 91.66%;
+  }
+
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+  .main-header {
+    display: inline;
+  }
+
+  .bar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  label #bar {
+    display: flex;
+  }
+
+  #click:checked ~ .bar-logo #bar {
+    display: none;
+  }
+
+  #click:checked ~ .bar-logo #cancel {
+    display: inline;
+  }
+
+  #click:checked ~ .main-nav ul {
+    left: 0%;
+  }
+
+  .main-nav ul {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: #353535;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .main-nav ul li {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    font-size: 20px;
+  }
+
+  .icons ul {
+    position: fixed;
+    bottom: 80px;
+    left: -100%;
+  }
+
+  #click:checked ~ .icons ul {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 80px;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 3;
+    transition: all 0.3s ease;
+  }
+  .gift-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    gap: 30px;
+  }
+
+  .gift-card-img {
+    margin-bottom: 15px;
+  }
+
+  .gift-paragraph {
+    width: 100%;
+  }
+
+  .image-fit {
+    aspect-ratio: 14 / 20;
+    object-fit: cover;
+  }
+
+  .monstera-poster {
+    aspect-ratio: 12 / 10;
+    object-fit: cover;
+  }
+
+  .registration-header {
+    padding-bottom: 20px;
+
+    font-size: 35px;
+  }
+
+  .form p {
+    padding-bottom: 25px;
+    font-size: 16px;
+  }
+
+  #mail {
+    padding: 20px 27px;
+    font-size: 15px;
+  }
+
+  .sign-up {
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 13px;
+    background-color: #a1a1a1;
+    color: #fff;
+  }
+
+  .footer-nav {
+    margin-top: 20px;
+  }
+
+  .footer {
+    display: flex;
+    padding: 40px 40px;
+  }
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    float: left;
+  }
+
+  .col-sm-1 {
+    width: 8.33%;
+  }
+
+  .col-sm-2 {
+    width: 16.66%;
+  }
+
+  .col-sm-3 {
+    width: 25%;
+  }
+
+  .col-sm-4 {
+    width: 33.33%;
+  }
+
+  .col-sm-5 {
+    width: 41.66%;
+  }
+
+  .col-sm-6 {
+    width: 50%;
+  }
+
+  .col-sm-7 {
+    width: 58.33%;
+  }
+
+  .col-sm-8 {
+    width: 66.66%;
+  }
+
+  .col-sm-9 {
+    width: 75%;
+  }
+
+  .col-sm-10 {
+    width: 83.33%;
+  }
+
+  .col-sm-11 {
+    width: 91.66%;
+  }
+
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  label #bar {
+    display: flex;
+  }
+
+  #click:checked ~ .bar-logo #bar {
+    display: none;
+  }
+
+  #click:checked ~ .bar-logo #cancel {
+    display: inline;
+  }
+
+  #click:checked ~ .main-nav ul {
+    left: 0%;
+  }
+
+  .main-nav ul {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: #353535;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .main-nav ul li {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    font-size: 20px;
+  }
+
+  .icons ul {
+    position: fixed;
+    bottom: 80px;
+    left: -100%;
+  }
+
+  #click:checked ~ .icons ul {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 80px;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 3;
+    transition: all 0.3s ease;
+  }
+
+  .poster-text p {
+    font-size: 45px;
+  }
+
+  .main-header {
+    display: inline;
+  }
+
+  .bar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .gift-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    gap: 30px;
+  }
+
+  .gift-card-img {
+    margin-bottom: 15px;
+  }
+
+  .gift-paragraph {
+    width: 100%;
+  }
+
+  .image-fit {
+    aspect-ratio: 14 / 20;
+    object-fit: cover;
+  }
+
+  .form {
+    border: none;
+  }
+  .monstera-poster {
+    aspect-ratio: 14 / 16;
+    object-fit: cover;
+  }
+  .registration-header {
+    padding-bottom: 17px;
+
+    font-size: 30px;
+  }
+
+  .form p {
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+
+  #mail {
+    padding: 15px 23px;
+    font-size: 13px;
+  }
+
+  .sign-up {
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 13px;
+    background-color: #a1a1a1;
+    color: #fff;
+  }
+
+  .footer-nav {
+    margin-top: 20px;
+  }
+
+  .footer {
+    display: inline-block;
+    padding: 40px 40px;
+  }
 }
