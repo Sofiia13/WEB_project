@@ -501,6 +501,10 @@ label #cancel {
     padding-right: 30px;
   }
 
+  .bar-logo label #cancel {
+    padding-right: 30px;
+  }
+
   label #bar {
     display: flex;
   }
