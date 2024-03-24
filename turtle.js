@@ -28,7 +28,9 @@ function movePlayer(e) {
       playerY = 560;
       score++;
       carSpeed += 0.2;
-      carInterval = Math.max(carInterval - carSpeed * 100, 10);
+      carInterval = Math.max(carInterval - carSpeed * 10, 100);
+      clearTimeout(carTimer);
+      carTimer = setTimeout(generateCars, carInterval);
     }
   }
 }
@@ -55,6 +57,7 @@ function generateCars() {
     "#9100AA",
   ][Math.floor(Math.random() * 6)];
   cars.push({ x: canvas.width, y: carY, color: carColor });
+  carTimer = setTimeout(generateCars, carInterval);
 }
 
 function drawCars() {
@@ -73,9 +76,7 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawPlayer();
   drawCars();
-  // setInterval(generateCars, carInterval);
   moveCarsOnRoad();
-  // collisionDetection();
   drawScore();
   requestAnimationFrame(draw);
 }
@@ -84,4 +85,5 @@ document.addEventListener("keydown", movePlayer);
 
 draw();
 
-setInterval(generateCars, carInterval);
+// Початкове створення першої машинки:
+generateCars();
