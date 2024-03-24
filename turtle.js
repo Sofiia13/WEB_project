@@ -16,6 +16,8 @@ let carSpeed = 2;
 let carInterval = 500;
 let carTimer;
 
+let gameOverFlag = false;
+
 function drawPlayer() {
   ctx.fillStyle = "black";
   ctx.fillRect(playerX, playerY, playerSize, playerSize);
@@ -38,6 +40,7 @@ function movePlayer(e) {
 function drawScore() {
   ctx.fillStyle = "black";
   ctx.font = "24px Courier";
+  ctx.textAlign = "left";
   ctx.fillText("SCORE: " + score, 10, 30);
 }
 
@@ -72,18 +75,54 @@ function moveCarsOnRoad() {
   });
 }
 
+function gameOver() {
+  ctx.fillStyle = "black";
+  ctx.font = "bold 40px Courier";
+  ctx.textAlign = "center";
+  ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2);
+  clearInterval(carTimer);
+  document.getElementById("startBtn").style.display = "block";
+  gameOverFlag = true;
+}
+
+function collisionDetection() {
+  cars.forEach((car) => {
+    if (
+      playerX < car.x + carWidth &&
+      playerX + playerSize > car.x &&
+      playerY < car.y + carHeight &&
+      playerY + playerSize > car.y
+    ) {
+      gameOver();
+    }
+  });
+}
+
+function startAgain() {
+  gameOverFlag = false;
+  score = 1;
+  cars = [];
+  carSpeed = 2;
+  playerY = 560;
+  document.getElementById("startBtn").style.display = "none";
+  draw();
+  generateCars();
+}
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawPlayer();
   drawCars();
   moveCarsOnRoad();
+  collisionDetection();
   drawScore();
-  requestAnimationFrame(draw);
-}
 
+  if (!gameOverFlag) {
+    requestAnimationFrame(draw);
+  }
+}
 document.addEventListener("keydown", movePlayer);
 
 draw();
 
-// Початкове створення першої машинки:
 generateCars();
