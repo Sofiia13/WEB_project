@@ -100,15 +100,28 @@ function checkAnswers() {
       if (selectedAnswerValue === correctAnswer) {
         correctAnswers++;
       }
+      // створюю класи для правильних і неправильних відповідей
+      const questionDiv = document.querySelector(
+        `.question:nth-child(${index + 1})`
+      );
+      if (selectedAnswerValue !== correctAnswer) {
+        questionDiv.classList.add("incorrect-answer");
+      } else {
+        questionDiv.classList.add("correct-answer");
+      }
     }
   });
 
   const totalQuestions = surveyData.length;
   const percentageCorrect = (correctAnswers / totalQuestions) * 100;
 
-  alert(
-    `You got ${correctAnswers} out of ${totalQuestions} questions correct (${percentageCorrect}%).`
-  );
+  const resultContainer = document.getElementById("result-container");
+  resultContainer.innerHTML = `Твій результат ${correctAnswers}/${totalQuestions}`;
+
+  // alert(
+  //   `You got ${correctAnswers} out of ${totalQuestions} questions correct (${percentageCorrect}%).`
+  // );
+
   return correctAnswers;
 }
 
