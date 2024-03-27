@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+}
+
+body {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+
+  background-color: #353535;
+  color: #afafaf;
+}
+
+.name,
+.email,
+.tel-phone,
+.instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+}
+label {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.main {
+  font-size: 25px;
+}
+
+input {
+  padding: 6px;
+}
+
+#favcolor {
+  padding: 0;
+}
+
+select {
+  padding: 10px 10px;
+}
+
+.radio {
+  margin: 15px;
+  font-size: 10px;
+}
+
+.radio input[type="radio"] {
+  margin-left: 25px;
+}
+
+.checkbox {
+  margin: 20px;
+  font-size: 10px;
+}
+
+.checkbox label .box {
+  margin-left: 25px;
+}
+
+#save-btn,
+#show-faculty,
+#show-volume,
+#show-group {
+  margin-top: 20px;
+  padding: 20px 30px;
+  background-color: #b7b7b7;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#save-btn:hover,
+#show-faculty:hover,
+#show-volume:hover,
+#show-group:hover {
+  background-color: #9c9c9c;
+}
