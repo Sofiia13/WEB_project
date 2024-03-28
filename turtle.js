@@ -94,6 +94,7 @@ function collisionDetection() {
       playerY + playerSize > car.y
     ) {
       gameOver();
+      saveData(score);
     }
   });
 }
@@ -121,8 +122,60 @@ function draw() {
     requestAnimationFrame(draw);
   }
 }
-document.addEventListener("keydown", movePlayer);
+document.addEventListener("keyup", movePlayer);
 
 draw();
 
 generateCars();
+
+let json = [];
+
+function loadData() {
+  const jsonString = localStorage.getItem("Score");
+  if (jsonString) {
+    json = JSON.parse(jsonString);
+  }
+}
+
+loadData();
+// localStorage.clear();
+
+function saveData(score) {
+  console.log(score);
+  const jsonData = {
+    score: score,
+  };
+  json.push(jsonData);
+
+  const jsonString = JSON.stringify(json);
+
+  localStorage.setItem("Score", jsonString);
+}
+
+let value = [];
+document.addEventListener("DOMContentLoaded", function () {
+  function retrieveData() {
+    if (localStorage.getItem("Score")) {
+      let data = JSON.parse(localStorage.getItem("Score"));
+      // console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        value.push(data[i].score);
+      }
+      value.sort(function (a, b) {
+        return a - b;
+      });
+      // console.log(value);
+
+      const minValue = value.slice(0, 3);
+      const maxValue = value.slice(-3);
+
+      document.getElementById("min-value").textContent = minValue;
+      document.getElementById("max-value").textContent = maxValue;
+    } else {
+      document.getElementById("min-value").textContent =
+        "No data found in storage.";
+    }
+  }
+
+  document.getElementById("save").addEventListener("click", retrieveData);
+});

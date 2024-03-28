@@ -9,7 +9,7 @@
         border: 1px solid black;
         background-color: #f0f0f0;
       }
-      button {
+      #startBtn {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -17,6 +17,10 @@
         padding: 10px 20px;
         display: none;
       }
+
+      /* #min-value {
+        display: none;
+      } */
     </style>
   </head>
   <body>
@@ -24,5 +28,12 @@
     <button id="startBtn" onclick="startAgain()">Start Again</button>
 
     <script src="turtle.js"></script>
+    <div>
+      <button id="save">Show score</button>
+    </div>
+    <h3 id="min-header">Мінімальні значення</h3>
+    <div id="min-value"></div>
+    <h3 id="max-header">Максимальні значення</h3>
+    <div id="max-value"></div>
   </body>
 </html>
